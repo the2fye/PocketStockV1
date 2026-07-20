@@ -39,7 +39,9 @@ The entire build costs **$9.45** in parts:
 | SW1–SW3 | 6mm tactile push buttons | 3 | $0.45 |
 | | **Total** | | **$9.45** |
 
-Plus a custom PCB (gerbers in [`hardware/gerbers`](hardware/gerbers)) and a 3D-printed enclosure (STLs in [`cad/psv1-stls`](cad/psv1-stls)). Full parts list with supplier links: [`hardware/bill-of-materials-psv1.csv`](hardware/bill-of-materials-psv1.csv)
+Plus a custom PCB and a 3D-printed enclosure (STLs in [`cad/psv1-stls`](cad/psv1-stls)). Full parts list with supplier links: [`hardware/bill-of-materials-psv1.csv`](hardware/bill-of-materials-psv1.csv)
+
+Everything you need to reproduce or remix the board is included: ready-to-fab gerbers in [`hardware/gerbers`](hardware/gerbers), the **full KiCad project** (schematic + board layout) in [`hardware/pcb`](hardware/pcb), and a **STEP model** of the assembled PCB for designing your own enclosure around it.
 
 ### Wiring
 
@@ -53,6 +55,14 @@ Plus a custom PCB (gerbers in [`hardware/gerbers`](hardware/gerbers)) and a 3D-p
 
 Buttons are active-low using the ESP32's internal pull-ups — wire each button between its GPIO and GND. No external resistors needed.
 
+### Schematic
+
+<div align="center">
+<img src="hardware/schematics/psv1-sch.png" alt="PocketStock schematic" width="700"/>
+</div>
+
+Full vector version: [`hardware/schematics/psv1-sch.pdf`](hardware/schematics/psv1-sch.pdf) · KiCad source: [`hardware/schematics`](hardware/schematics)
+
 ## Build it
 
 ### 1. Print the enclosure
@@ -61,7 +71,7 @@ Print the three STLs in [`cad/psv1-stls`](cad/psv1-stls): `base-v3.stl`, `lid-v3
 
 ### 2. Order the PCB
 
-Upload the files in [`hardware/gerbers`](hardware/gerbers) to your favorite fab (JLCPCB, PCBWay, OSH Park). Schematics live in [`hardware/schematics`](hardware/schematics) if you'd rather breadboard it first.
+Upload the files in [`hardware/gerbers`](hardware/gerbers) to your favorite fab (JLCPCB, PCBWay, OSH Park). Prefer to breadboard first? The [schematic](#schematic) above is all you need — or open the full KiCad project in [`hardware/pcb`](hardware/pcb) to modify the board itself.
 
 ### 3. Flash the firmware
 
@@ -73,8 +83,8 @@ Upload the files in [`hardware/gerbers`](hardware/gerbers) to your favorite fab 
 3. Open [`firmware/PocketStockV1/PocketStockV1.ino`](firmware/PocketStockV1/PocketStockV1.ino) and set your own values:
 
 ```cpp
-const char* ssid   = "YOUR_WIFI_SSID";   // open networks supported; add a password arg to WiFi.begin() for secured ones
-const char* apiKey = "YOUR_FINNHUB_KEY"; // free at https://finnhub.io
+const char* ssid   = "YOUR_WIFI_SSID";       // open networks supported; add a password arg to WiFi.begin() for secured ones
+const char* apiKey = "YOUR_FINNHUB_API_KEY"; // free at https://finnhub.io
 ```
 
 4. Edit the `stocks[]` array to build your own watchlist — any Finnhub-supported ticker works.
@@ -101,12 +111,16 @@ const char* apiKey = "YOUR_FINNHUB_KEY"; // free at https://finnhub.io
 ## Repo map
 
 ```
-├── cad/         3D-printable enclosure (STLs + renders)
-├── docs/        Architecture notes
-├── firmware/    ESP32-C3 Arduino sketch
-├── hardware/    PCB gerbers, schematics, BOM
-├── images/      Photos & renders for this README
-└── software/    Desktop-side utilities (WIP)
+├── cad/
+│   ├── psv1-stls/    3D-printable enclosure (base, lid, buttons)
+│   └── renders/      Enclosure renders
+├── docs/             Architecture doc — how the firmware & hardware work
+├── firmware/         ESP32-C3 Arduino sketch
+└── hardware/
+    ├── gerbers/      Ready-to-fab PCB files
+    ├── pcb/          Full KiCad project + STEP model + board renders
+    ├── schematics/   Schematic (PNG, PDF, KiCad source)
+    └── bill-of-materials-psv1.csv
 ```
 
 ## Roadmap

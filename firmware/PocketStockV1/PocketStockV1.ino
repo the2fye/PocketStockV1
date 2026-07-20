@@ -21,7 +21,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define BTN_SELECT 8
 
 /* ================= WIFI ================= */
-const char* ssid = "WhiteSky-PublicWiFi";
+const char* ssid = "YOUR_WIFI_SSID";
 
 /* ================= STOCKS ================= */
 String stocks[] = {
@@ -34,7 +34,7 @@ int stockScrollOffset = 0;
 const int VISIBLE_STOCKS = 6;
 
 /* ================= FINNHUB ================= */
-const char* apiKey = "d1qhgl9r01qo4qd79j00d1qhgl9r01qo4qd79j0g";
+const char* apiKey = "YOUR_FINNHUB_API_KEY";
 
 /* ================= UI STATES ================= */
 enum UIState {

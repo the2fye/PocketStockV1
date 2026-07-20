@@ -14,14 +14,14 @@
 		(2 "B.Cu" signal "Back")
 		(13 "F.Paste" user)
 		(15 "B.Paste" user)
-		(5 "F.SilkS" user)
-		(7 "B.SilkS" user)
+		(5 "F.SilkS" user "F.Silkscreen")
+		(7 "B.SilkS" user "B.Silkscreen")
 		(1 "F.Mask" user)
 		(3 "B.Mask" user)
 		(25 "Edge.Cuts" user)
 		(27 "Margin" user)
-		(31 "F.CrtYd" user)
-		(29 "B.CrtYd" user)
+		(31 "F.CrtYd" user "F.Courtyard")
+		(29 "B.CrtYd" user "B.Courtyard")
 		(35 "F.Fab" user)
 	)
 	(setup
@@ -94,10 +94,10 @@
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
-			(usegerberextensions no)
-			(usegerberattributes yes)
-			(usegerberadvancedattributes yes)
-			(creategerberjobfile yes)
+			(usegerberextensions yes)
+			(usegerberattributes no)
+			(usegerberadvancedattributes no)
+			(creategerberjobfile no)
 			(dashed_line_dash_ratio 12.000000)
 			(dashed_line_gap_ratio 3.000000)
 			(svgprecision 4)
@@ -125,9 +125,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "gerbers/")
 		)
 	)
 	(net 0 "")
@@ -397,6 +397,17 @@
 			)
 		)
 		(embedded_fonts no)
+		(model "/Users/armanaryafar/Downloads/0-96-inch-oled-lcd-module-4-pin-128x64-1/ssd1306 step.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -0)
+			)
+		)
 	)
 	(footprint "LOGO"
 		(layer "F.Cu")
@@ -874,7 +885,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "passive")
-			(uuid "fd3a5b0a-280d-4ac5-a147-97f22df20d58")
+			(uuid "daffda38-8523-409f-bf1d-4244f4e1956d")
 		)
 		(pad "2" thru_hole circle
 			(at 0 4.5 270)
@@ -896,7 +907,7 @@
 			(net 2 "Net-(U1-GPIO7)")
 			(pinfunction "2")
 			(pintype "passive")
-			(uuid "0201c06a-30ce-4140-94e8-203c2326d8e1")
+			(uuid "f73f40ea-d080-4f0c-a14a-9e3318cb99fb")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_PUSH_6mm.step"
@@ -1221,7 +1232,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "passive")
-			(uuid "bf7ab383-cf4f-4ecd-9df7-375bc9c1468c")
+			(uuid "2865aa4f-7761-4fa0-804e-013f14f8049b")
 		)
 		(pad "2" thru_hole circle
 			(at 0 4.5 270)
@@ -1243,7 +1254,7 @@
 			(net 4 "Net-(U1-GPIO6)")
 			(pinfunction "2")
 			(pintype "passive")
-			(uuid "65bf76ce-9a30-4f10-87a9-3ae21aba0508")
+			(uuid "dce103cb-c020-42b4-a2c2-fac6ee48d14f")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_PUSH_6mm.step"
@@ -1568,7 +1579,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "passive")
-			(uuid "9023b902-af6f-4f7e-88e7-e964fc4be42d")
+			(uuid "a09306de-dd7e-41cd-81ee-14fa50716696")
 		)
 		(pad "2" thru_hole circle
 			(at 0 4.5 270)
@@ -1590,7 +1601,7 @@
 			(net 3 "Net-(U1-GPIO8)")
 			(pinfunction "2")
 			(pintype "passive")
-			(uuid "90a23ac8-af17-43df-84b6-8d4c4504a856")
+			(uuid "9c9bc6c2-bdb4-4de8-aaf5-ebb3cfa3fb73")
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Button_Switch_THT.3dshapes/SW_PUSH_6mm.step"
@@ -2114,7 +2125,7 @@
 			(unlocked yes)
 			(layer "B.SilkS")
 			(hide yes)
-			(uuid "f1da21fe-29cc-4b6e-b011-f7dff4ac9e1c")
+			(uuid "726ec747-e219-4ad2-a40d-2acc187055d2")
 			(effects
 				(font
 					(size 1 1)
@@ -2127,7 +2138,7 @@
 			(at 0 -1 0)
 			(unlocked yes)
 			(layer "B.Fab")
-			(uuid "c1ff2750-5ae6-4a9b-b89c-68f37530b975")
+			(uuid "1d4017da-fc53-48ff-99d9-bafff8b71b18")
 			(effects
 				(font
 					(size 1 1)
@@ -2141,7 +2152,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "a01d23f6-0dde-4cd2-a1b1-5bf1b3d92119")
+			(uuid "f40d8ba4-7089-4fb3-b149-83116132f518")
 			(effects
 				(font
 					(size 1 1)
@@ -2155,7 +2166,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "d462a71a-53bb-4388-b21c-32a3126211eb")
+			(uuid "5f969057-abcd-4220-b67f-9300d32c9f51")
 			(effects
 				(font
 					(size 1 1)
@@ -2676,6 +2687,17 @@
 			(members "16775979-94ec-4e7f-a611-66b0b2d8646d")
 		)
 		(embedded_fonts no)
+		(model "/Users/armanaryafar/Downloads/esp32-c3-supermini-1/ESP32-C3 supermini v5.step"
+			(offset
+				(xyz -20 -6 -3.5)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 90 -180 -0)
+			)
+		)
 	)
 	(gr_line
 		(start 180.25 84)
@@ -2730,6 +2752,19 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "PocketStock V1"
+		(at 155.8 110.8 0)
+		(layer "F.SilkS")
+		(uuid "807be4be-1bf8-40d6-b212-a4d2475e4638")
+		(effects
+			(font
+				(size 1.524 1.524)
+				(thickness 0.3048)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "SSD1306"
 		(at 159.6 94.4 0)
 		(layer "F.SilkS")
@@ -2743,7 +2778,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "made by dior sausage"
+	(gr_text "designed by dior sausage"
 		(at 173.8 110.3 0)
 		(layer "B.SilkS")
 		(uuid "c1cfad55-fe6c-4596-9ed2-0185c289cb45")
@@ -2767,19 +2802,6 @@
 				(bold yes)
 			)
 			(justify left bottom mirror)
-		)
-	)
-	(gr_text "PocketStock V1"
-		(at 155.8 110.8 0)
-		(layer "F.Paste")
-		(uuid "807be4be-1bf8-40d6-b212-a4d2475e4638")
-		(effects
-			(font
-				(size 1.524 1.524)
-				(thickness 0.3048)
-				(bold yes)
-			)
-			(justify left bottom)
 		)
 	)
 	(segment

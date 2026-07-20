@@ -138,5 +138,5 @@ See [LICENSE](LICENSE). Fork it, print it, mod it — and if you build one, open
 ---
 
 <div align="center">
-Built by <a href="https://github.com/the2fye">@the2fye</a> · Powered by too much caffeine and the Finnhub free tier
+Built by <a href="https://github.com/the2fye">@the2fye</a> · Powered by white monsters and lots of dior sausage ;)
 </div>

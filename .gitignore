@@ -1,47 +1,35 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
 
 # Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
+# Compiled Object files
 # Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
+# Debugger Files
 # Executables
-*.exe
-*.out
-*.app
-
+# Fortran module files
+# Linker files
+# Precompiled Headers
+# Prerequisites
 # debug information files
+*.a
+*.app
+*.d
+*.dll
 *.dwo
-.DS_Store
-.DS_Store
-.DS_Store
-.DS_Store
+*.dylib
+*.exe
+*.gch
+*.ilk
+*.la
+*.lai
+*.lib
+*.lo
+*.mod
+*.o
+*.obj
+*.out
+*.pch
+*.pdb
+*.slo
+*.smod
+*.so
 .DS_Store
 fp-info-cache
